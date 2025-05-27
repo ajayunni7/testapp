@@ -19,21 +19,26 @@ class DashboardView extends StatelessWidget {
     return Scaffold(
       body: Obx(() => pages[controller.selectedIndex.value]),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
         child: Obx(
-          () => GNav(
-            gap: 8,
-            activeColor: Colors.white,
-            color: Colors.grey,
-            tabBackgroundColor: Colors.lightBlue,
-            padding: const EdgeInsets.all(12),
-            selectedIndex: controller.selectedIndex.value,
-            onTabChange: controller.changeTab,
-            tabs: const [
-              GButton(icon: Icons.home, text: 'Home'),
-              GButton(icon: Icons.person, text: 'Profile'),
-              GButton(icon: Icons.settings, text: 'Settings'),
-            ],
+          () => Container(
+            color: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+            child: GNav(
+              gap: 8,
+              activeColor: Colors.white,
+              backgroundColor: Colors.blueAccent,
+              color: Colors.grey,
+              tabBackgroundColor: Colors.blueAccent,
+              padding: const EdgeInsets.all(12),
+              selectedIndex: controller.selectedIndex.value,
+              onTabChange: controller.changeTab,
+              tabs: const [
+                GButton(icon: Icons.home, text: 'Home'),
+                GButton(icon: Icons.person, text: 'Profile'),
+                GButton(icon: Icons.settings, text: 'Settings'),
+              ],
+            ),
           ),
         ),
       ),
